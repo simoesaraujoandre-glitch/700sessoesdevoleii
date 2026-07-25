@@ -1,0 +1,6 @@
+{
+  "name": "Treinamentos de Vôlei",
+  "description": "Página de vendas para 700 Sessões de Treinamento de Vôlei",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
