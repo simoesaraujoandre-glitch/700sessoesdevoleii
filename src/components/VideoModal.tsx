@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Play, Volume2, VolumeX, RotateCcw, CheckCircle } from 'lucide-react';
+import React from 'react';
+import { X, CheckCircle } from 'lucide-react';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -12,9 +12,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   onClose,
   title = 'Demonstração Prática de Treinamento'
 }) => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
-
   if (!isOpen) return null;
 
   return (
@@ -35,50 +32,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({
           </button>
         </div>
 
-        {/* Video Player Box Simulation */}
-        <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden group">
-          {/* Background Motion Video Simulation Graphic */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-zinc-950 flex flex-col items-center justify-center p-6 text-center">
-            
-            {/* Tactical Court Graphic */}
-            <svg className="w-48 h-32 text-orange-600/30 mb-4 animate-pulse" viewBox="0 0 200 120" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="5" y="5" width="190" height="110" rx="3" />
-              <line x1="100" y1="5" x2="100" y2="115" />
-              <circle cx="100" cy="60" r="25" />
-              <path d="M 30 60 Q 60 30 100 60 T 170 60" stroke="#ea580c" strokeWidth="3" fill="none" />
-            </svg>
-
-            <div className="space-y-2 z-10">
-              <span className="inline-block bg-orange-600 text-black text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                SESSÃO EM VÍDEO HD (EXEMPLO)
-              </span>
-              <p className="text-white text-sm font-semibold max-w-md">
-                Exercício #01: Saque Flutuante + Recepção de Manchete em Velocidade
-              </p>
-            </div>
-          </div>
-
-          {/* Controls Overlay */}
-          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex items-center justify-between text-white text-xs">
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="p-2 rounded-full bg-orange-600 hover:bg-orange-500 transition-colors"
-              >
-                <Play className={`w-4 h-4 fill-black ${isPlaying ? 'opacity-90' : ''}`} />
-              </button>
-              <span className="font-mono">02:14 / 05:00</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setIsMuted(!isMuted)}
-                className="p-1.5 text-zinc-300 hover:text-white"
-              >
-                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-              </button>
-            </div>
-          </div>
+        {/* Video Player Box */}
+        <div className="relative w-full max-w-[340px] sm:max-w-[360px] mx-auto bg-black flex items-center justify-center overflow-hidden my-4 rounded-xl border border-orange-500/30 p-1">
+          <wistia-player media-id="v5ev6ip0e3" aspect="0.5625"></wistia-player>
         </div>
 
         {/* Video Info Footer */}

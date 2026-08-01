@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useCallback, lazy, Suspense } from 'react';
 import { HeaderBanner } from './components/HeaderBanner';
 import { HeroSection } from './components/HeroSection';
 import { WhatYouReceive } from './components/WhatYouReceive';
@@ -52,23 +52,30 @@ export default function App() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedSession, setSelectedSession] = useState<TrainingSession | null>(null);
 
-  const handleSaveConfig = (newConfig: SalesPageConfig) => {
+  const handleOpenVideo = useCallback(() => setIsVideoModalOpen(true), []);
+  const handleCloseVideo = useCallback(() => setIsVideoModalOpen(false), []);
+  const handleOpenEdit = useCallback(() => setIsEditModalOpen(true), []);
+  const handleCloseEdit = useCallback(() => setIsEditModalOpen(false), []);
+  const handleCloseSessionModal = useCallback(() => setSelectedSession(null), []);
+  const handleSelectSession = useCallback((session: TrainingSession) => setSelectedSession(session), []);
+
+  const handleSaveConfig = useCallback((newConfig: SalesPageConfig) => {
     setConfig(newConfig);
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(newConfig));
     } catch (e) {
       console.error('Failed to save config', e);
     }
-  };
+  }, []);
 
-  const handleResetConfig = () => {
+  const handleResetConfig = useCallback(() => {
     setConfig(defaultConfig);
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch (e) {
       console.error('Failed to reset config', e);
     }
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-orange-600 selection:text-black antialiased relative">
@@ -83,7 +90,7 @@ export default function App() {
         ctaText={config.heroCtaText}
         checkoutUrl={config.completePlanCheckoutUrl}
         countdownMinutes={config.countdownMinutes}
-        onOpenVideo={() => setIsVideoModalOpen(true)}
+        onOpenVideo={handleOpenVideo}
       />
 
       {/* 3. O Que Você Vai Receber */}
@@ -93,7 +100,7 @@ export default function App() {
       <WhyChooseUs />
 
       {/* 5. Prévia Do Que Você Vai Receber */}
-      <PreviewSection onSelectSession={(session) => setSelectedSession(session)} />
+      <PreviewSection onSelectSession={handleSelectSession} />
 
       {/* 6. Receba 3 Bônus Incríveis GRÁTIS */}
       <BonusSection />
@@ -125,24 +132,24 @@ export default function App() {
       />
 
       {/* 12. Footer with edit link */}
-      <Footer onOpenEdit={() => setIsEditModalOpen(true)} />
+      <Footer onOpenEdit={handleOpenEdit} />
 
       {/* Modals wrapped in Suspense for lazy loading */}
       <Suspense fallback={null}>
         <VideoModal
           isOpen={isVideoModalOpen}
-          onClose={() => setIsVideoModalOpen(false)}
+          onClose={handleCloseVideo}
         />
 
         <SessionDetailModal
           session={selectedSession}
-          onClose={() => setSelectedSession(null)}
-          onOpenVideo={() => setIsVideoModalOpen(true)}
+          onClose={handleCloseSessionModal}
+          onOpenVideo={handleOpenVideo}
         />
 
         <EditModal
           isOpen={isEditModalOpen}
-          onClose={() => setIsEditModalOpen(false)}
+          onClose={handleCloseEdit}
           config={config}
           onSave={handleSaveConfig}
           onReset={handleResetConfig}

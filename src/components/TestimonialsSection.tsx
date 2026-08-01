@@ -2,10 +2,9 @@ import React from 'react';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
 
-export const TestimonialsSection: React.FC = () => {
-  // Duplicate testimonials array to ensure seamless infinite loop
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
+export const TestimonialsSection: React.FC = React.memo(() => {
   return (
     <section id="testimonials-section" className="py-16 md:py-24 bg-zinc-950 border-b border-white/5 relative z-10 overflow-hidden">
       {/* Background Glow */}
@@ -58,6 +57,8 @@ export const TestimonialsSection: React.FC = () => {
                 <img
                   src={item.avatar}
                   alt={item.name}
+                  width={44}
+                  height={44}
                   className="w-11 h-11 rounded-full object-cover border-2 border-orange-600/80 shrink-0"
                   referrerPolicy="no-referrer"
                   loading="lazy"
@@ -96,4 +97,4 @@ export const TestimonialsSection: React.FC = () => {
       `}</style>
     </section>
   );
-};
+});

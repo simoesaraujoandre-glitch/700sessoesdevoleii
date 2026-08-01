@@ -4,7 +4,7 @@ interface FooterProps {
   onOpenEdit?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = () => {
+export const Footer: React.FC<FooterProps> = React.memo(() => {
   return (
     <footer id="footer" className="py-8 bg-zinc-950 border-t border-white/5 text-center text-zinc-500 text-xs font-medium space-y-4 relative z-10">
       <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -12,4 +12,4 @@ export const Footer: React.FC<FooterProps> = () => {
       </div>
     </footer>
   );
-};
+});

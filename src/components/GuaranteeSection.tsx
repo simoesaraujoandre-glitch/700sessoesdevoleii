@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, CheckCircle } from 'lucide-react';
 
-export const GuaranteeSection: React.FC = () => {
+export const GuaranteeSection: React.FC = React.memo(() => {
   return (
     <section id="guarantee-section" className="py-16 md:py-20 bg-zinc-950 border-b border-white/5 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -49,4 +49,4 @@ export const GuaranteeSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Gift, Check, BookOpen } from 'lucide-react';
 import { bonusList } from '../data/content';
 
-export const BonusSection: React.FC = () => {
+export const BonusSection: React.FC = React.memo(() => {
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
 
   const handleImageError = (id: number) => {
@@ -51,7 +51,9 @@ export const BonusSection: React.FC = () => {
                         src={bonus.coverImage}
                         alt={bonus.title}
                         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                        loading="eager"
+                        width={300}
+                        height={400}
+                        loading="lazy"
                         decoding="async"
                         onError={() => handleImageError(bonus.id)}
                       />
@@ -106,5 +108,5 @@ export const BonusSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 

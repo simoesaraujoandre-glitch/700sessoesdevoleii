@@ -1,38 +1,39 @@
 import React from 'react';
 import { BookOpen, Calendar, Users, CheckCircle2 } from 'lucide-react';
 
-export const WhatYouReceive: React.FC = () => {
-  const cards = [
-    {
-      icon: BookOpen,
-      title: '700 Sessões Completas',
-      description: 'Sessões prontas para aplicar, organizadas com objetivos claros e progressão de aprendizagem.',
-      bullets: [
-        'Treinos desenvolvidos para diferentes níveis, do iniciante ao avançado, facilitando a evolução dos atletas.',
-        'Material digital disponível para celular, tablet ou computador, com acesso vitalício.'
-      ]
-    },
-    {
-      icon: Calendar,
-      title: 'Planejamentos Passo a Passo',
-      description: 'Sessões completas que facilitam a organização de toda a temporada.',
-      bullets: [
-        'Diferentes níveis de dificuldade',
-        'Resultados mensuráveis',
-        'Fácil implementação'
-      ]
-    },
-    {
-      icon: Users,
-      title: 'Para Todas as Equipes',
-      description: 'Ideal para treinadores, academias e clubes esportivos.',
-      bullets: [
-        'Categorias infantis',
-        'Categorias juvenis',
-        'Equipes adultas'
-      ]
-    }
-  ];
+const cards = [
+  {
+    icon: BookOpen,
+    title: '700 Sessões Completas',
+    description: 'Sessões prontas para aplicar, organizadas com objetivos claros e progressão de aprendizagem.',
+    bullets: [
+      'Treinos desenvolvidos para diferentes níveis, do iniciante ao avançado, facilitando a evolução dos atletas.',
+      'Material digital disponível para celular, tablet ou computador, com acesso vitalício.'
+    ]
+  },
+  {
+    icon: Calendar,
+    title: 'Planejamentos Passo a Passo',
+    description: 'Sessões completas que facilitam a organização de toda a temporada.',
+    bullets: [
+      'Diferentes níveis de dificuldade',
+      'Resultados mensuráveis',
+      'Fácil implementação'
+    ]
+  },
+  {
+    icon: Users,
+    title: 'Para Todas as Equipes',
+    description: 'Ideal para treinadores, academias e clubes esportivos.',
+    bullets: [
+      'Categorias infantis',
+      'Categorias juvenis',
+      'Equipes adultas'
+    ]
+  }
+];
+
+export const WhatYouReceive: React.FC = React.memo(() => {
 
   return (
     <section id="what-you-receive" className="py-16 md:py-24 bg-zinc-950 relative border-b border-white/5">
@@ -91,4 +92,4 @@ export const WhatYouReceive: React.FC = () => {
       </div>
     </section>
   );
-};
+});

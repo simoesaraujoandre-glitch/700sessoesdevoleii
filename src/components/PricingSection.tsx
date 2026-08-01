@@ -10,7 +10,7 @@ interface PricingSectionProps {
   completeCheckoutUrl: string;
 }
 
-export const PricingSection: React.FC<PricingSectionProps> = ({
+export const PricingSection: React.FC<PricingSectionProps> = React.memo(({
   basicPrice,
   basicOldPrice,
   basicCheckoutUrl,
@@ -25,10 +25,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
   const finalBasicCheckoutUrl = (basicCheckoutUrl && basicCheckoutUrl.startsWith('http')) 
     ? basicCheckoutUrl 
     : 'https://pay.wiapy.com/ippq8cRXBeIr';
-
-  const handleCheckoutClick = (_planName: string, _valueStr: string) => {
-    // Checkout click handler
-  };
 
   return (
     <section id="planos" className="py-16 md:py-24 bg-zinc-950 border-b border-white/5 relative z-10">
@@ -198,4 +194,4 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
       </div>
     </section>
   );
-};
+});

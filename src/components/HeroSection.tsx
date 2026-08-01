@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { ShieldCheck, Play, FileText, Volleyball, CheckCircle2 } from 'lucide-react';
-import { heroMediaThumb } from '../data/content';
+import React from 'react';
+import { ShieldCheck } from 'lucide-react';
 
 interface HeroSectionProps {
   headline: string;
@@ -11,7 +10,7 @@ interface HeroSectionProps {
   onOpenVideo: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
+export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
   headline,
   subtitle,
   ctaText,
@@ -19,7 +18,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   countdownMinutes,
   onOpenVideo
 }) => {
-  const [imgError, setImgError] = useState(false);
 
   return (
     <section id="hero-section" className="relative overflow-hidden bg-zinc-950 pt-10 pb-16 md:pt-16 md:pb-24 border-b border-white/5">
@@ -34,44 +32,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {headline}
         </h1>
 
-        {/* Image Mockup directly below H1 */}
+        {/* VSL Wistia Video directly below H1 */}
         <div className="py-2 flex justify-center">
-          {!imgError ? (
-            <img
-              id="hero-video-frame"
-              src={heroMediaThumb}
-              alt="Mockup do Treinamento"
-              onClick={onOpenVideo}
-              onError={() => setImgError(true)}
-              loading="eager"
-              decoding="async"
-              className="w-full max-w-[560px] h-auto object-contain cursor-pointer hover:scale-[1.02] transition-transform duration-300 drop-shadow-[0_20px_35px_rgba(0,0,0,0.8)] mx-auto"
-            />
-          ) : (
-            <div
-              onClick={onOpenVideo}
-              className="w-full max-w-[560px] bg-gradient-to-b from-zinc-900 to-zinc-950 border-2 border-orange-500/40 rounded-2xl p-6 sm:p-8 cursor-pointer hover:scale-[1.01] transition-all shadow-[0_0_50px_rgba(234,88,12,0.2)] text-left relative overflow-hidden group mx-auto"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="bg-orange-600 text-black font-black text-xs px-3 py-1 rounded uppercase tracking-wider">
-                  +700 SESSÕES
-                </span>
-                <span className="text-orange-400 font-bold text-xs flex items-center gap-1.5 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
-                  <Play className="w-3.5 h-3.5 fill-current" /> CLIQUE PARA VER VÍDEO
-                </span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-black italic text-white uppercase mb-2">
-                PACOTE COMPLETO DE TREINAMENTOS DE VÔLEI
-              </h3>
-              <p className="text-zinc-400 text-xs sm:text-sm mb-4">
-                Receba acesso digital instantâneo a +700 sessões práticas com objetivos, tempos e material organizado.
-              </p>
-              <div className="flex items-center gap-4 text-xs font-semibold text-zinc-300 pt-3 border-t border-white/10">
-                <span className="flex items-center gap-1"><CheckCircle2 className="w-4 h-4 text-orange-500" /> Acesso Imediato</span>
-                <span className="flex items-center gap-1"><CheckCircle2 className="w-4 h-4 text-orange-500" /> Formato PDF</span>
-              </div>
-            </div>
-          )}
+          <div className="w-full max-w-[340px] sm:max-w-[380px] bg-black rounded-2xl overflow-hidden border-2 border-orange-500/40 shadow-[0_0_50px_rgba(234,88,12,0.35)] relative mx-auto p-1">
+            <wistia-player media-id="v5ev6ip0e3" aspect="0.5625"></wistia-player>
+          </div>
         </div>
 
         {/* Subtitle */}
@@ -108,5 +73,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
     </section>
   );
-};
+});
 

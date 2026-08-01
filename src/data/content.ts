@@ -1,7 +1,5 @@
 import { SalesPageConfig, TrainingSession, BonusItem, Testimonial, FaqItem } from '../types';
 
-import heroVideoThumb from '../assets/images/hero_video_thumb_1784674525798.jpg';
-
 export const defaultConfig: SalesPageConfig = {
   announcementText: 'DESCONTO EXCLUSIVO SÓ HOJE • ACESSO IMEDIATO',
   heroHeadline: '+700 Sessões de Treinamento de Vôlei',

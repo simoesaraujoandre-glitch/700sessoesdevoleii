@@ -13,7 +13,7 @@ function getFormattedTodayDate(): string {
   return `${day}/${month}/${year}`;
 }
 
-export const HeaderBanner: React.FC<HeaderBannerProps> = ({ text }) => {
+export const HeaderBanner: React.FC<HeaderBannerProps> = React.memo(({ text }) => {
   const [currentDate, setCurrentDate] = useState<string>(getFormattedTodayDate);
 
   useEffect(() => {
@@ -35,6 +35,6 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({ text }) => {
       </div>
     </div>
   );
-};
+});
 
 

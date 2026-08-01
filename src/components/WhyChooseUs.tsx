@@ -1,29 +1,30 @@
 import React from 'react';
 import { Clock, Lightbulb, Flame, LayoutGrid, Trophy } from 'lucide-react';
 
-export const WhyChooseUs: React.FC = () => {
-  const items = [
-    {
-      icon: Clock,
-      text: 'Economize horas de planejamento toda semana.'
-    },
-    {
-      icon: Lightbulb,
-      text: 'Nunca mais vai ficar sem ideias.'
-    },
-    {
-      icon: Flame,
-      text: 'Aumente a motivação dos seus jogadores.'
-    },
-    {
-      icon: LayoutGrid,
-      text: 'Organize temporadas completas.'
-    },
-    {
-      icon: Trophy,
-      text: 'Treine com metodologia profissional.'
-    }
-  ];
+const items = [
+  {
+    icon: Clock,
+    text: 'Economize horas de planejamento toda semana.'
+  },
+  {
+    icon: Lightbulb,
+    text: 'Nunca mais vai ficar sem ideias.'
+  },
+  {
+    icon: Flame,
+    text: 'Aumente a motivação dos seus jogadores.'
+  },
+  {
+    icon: LayoutGrid,
+    text: 'Organize temporadas completas.'
+  },
+  {
+    icon: Trophy,
+    text: 'Treine com metodologia profissional.'
+  }
+];
+
+export const WhyChooseUs: React.FC = React.memo(() => {
 
   return (
     <section id="why-choose-us" className="py-16 md:py-20 bg-zinc-950 border-b border-white/5 relative z-10">
@@ -59,4 +60,4 @@ export const WhyChooseUs: React.FC = () => {
       </div>
     </section>
   );
-};
+});

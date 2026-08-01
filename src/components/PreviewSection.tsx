@@ -23,17 +23,16 @@ const carouselImages2 = [
   'https://i.ibb.co/5gMv3RX4/IMG-5003.jpg',
 ];
 
-export const PreviewSection: React.FC<PreviewSectionProps> = () => {
+const duplicatedImages1 = [...carouselImages1, ...carouselImages1];
+const duplicatedImages2 = [...carouselImages2, ...carouselImages2, ...carouselImages2];
+
+export const PreviewSection: React.FC<PreviewSectionProps> = React.memo(() => {
   // Track failed images to display a rich custom fallback preview card
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   const handleImageError = (id: string) => {
     setFailedImages((prev) => ({ ...prev, [id]: true }));
   };
-
-  // Duplicate images for infinite seamless loop
-  const duplicatedImages1 = [...carouselImages1, ...carouselImages1];
-  const duplicatedImages2 = [...carouselImages2, ...carouselImages2, ...carouselImages2];
 
   const renderCardContent = (imgUrl: string, index: number, rowKey: string) => {
     const cardId = `${rowKey}-${index}-${imgUrl}`;
@@ -84,7 +83,9 @@ export const PreviewSection: React.FC<PreviewSectionProps> = () => {
         src={imgUrl}
         alt={`Demonstração do Produto ${index + 1}`}
         className="h-full w-full object-cover sm:object-contain rounded-2xl"
-        loading="eager"
+        width={320}
+        height={460}
+        loading="lazy"
         decoding="async"
         onError={() => handleImageError(cardId)}
       />
@@ -176,5 +177,5 @@ export const PreviewSection: React.FC<PreviewSectionProps> = () => {
       `}</style>
     </section>
   );
-};
+});
 

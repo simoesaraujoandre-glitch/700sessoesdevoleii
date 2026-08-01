@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { faqs } from '../data/content';
 
-export const FaqSection: React.FC = () => {
+export const FaqSection: React.FC = React.memo(() => {
   const [openId, setOpenId] = useState<number | null>(null);
 
-  const toggleFaq = (id: number) => {
-    setOpenId(openId === id ? null : id);
-  };
+  const toggleFaq = useCallback((id: number) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  }, []);
 
   return (
     <section id="faq-section" className="py-16 md:py-24 bg-zinc-950 border-b border-white/5 relative z-10">
@@ -52,4 +52,4 @@ export const FaqSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});

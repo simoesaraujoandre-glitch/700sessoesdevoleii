@@ -7,7 +7,7 @@ interface FinalCtaSectionProps {
   countdownMinutes: number;
 }
 
-export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({
+export const FinalCtaSection: React.FC<FinalCtaSectionProps> = React.memo(({
   headline,
 }) => {
   return (
@@ -51,5 +51,5 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({
       </div>
     </section>
   );
-};
+});
 
