@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
         {/* VSL Wistia Video directly below H1 */}
         <div className="py-2 flex justify-center">
           <div className="w-full max-w-[340px] sm:max-w-[380px] bg-black rounded-2xl overflow-hidden border-2 border-orange-500/40 shadow-[0_0_50px_rgba(234,88,12,0.35)] relative mx-auto p-1">
-            <wistia-player media-id="v5ev6ip0e3" aspect="0.5625"></wistia-player>
+            <wistia-player media-id="socq98yhri" aspect="0.5625"></wistia-player>
           </div>
         </div>
 

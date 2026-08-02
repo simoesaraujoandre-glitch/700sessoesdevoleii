@@ -34,7 +34,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
 
         {/* Video Player Box */}
         <div className="relative w-full max-w-[340px] sm:max-w-[360px] mx-auto bg-black flex items-center justify-center overflow-hidden my-4 rounded-xl border border-orange-500/30 p-1">
-          <wistia-player media-id="v5ev6ip0e3" aspect="0.5625"></wistia-player>
+          <wistia-player media-id="socq98yhri" aspect="0.5625"></wistia-player>
         </div>
 
         {/* Video Info Footer */}

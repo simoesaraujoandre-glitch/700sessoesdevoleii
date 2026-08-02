@@ -101,10 +101,10 @@ export const PreviewSection: React.FC<PreviewSectionProps> = React.memo(() => {
         {/* Header */}
         <div className="text-center space-y-3 mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tighter text-white">
-            Demonstração do Produto
+            Demonstração do Produto Principal
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-normal max-w-xl mx-auto">
-            Confira uma prévia real do material completo que você receberá imediatamente após a confirmação.
+            Confira uma prévia real de um dos materiais que você receberá imediatamente após a confirmação.
           </p>
         </div>
       </div>
