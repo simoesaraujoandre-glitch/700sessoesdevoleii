@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, CheckCircle } from 'lucide-react';
 
 interface VideoModalProps {
@@ -12,6 +12,25 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   onClose,
   title = 'Demonstração Prática de Treinamento'
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      // Dynamically load Wistia scripts only when the user opens the modal
+      if (!document.querySelector('script[src*="fast.wistia.com/player.js"]')) {
+        const s1 = document.createElement('script');
+        s1.src = 'https://fast.wistia.com/player.js';
+        s1.async = true;
+        document.head.appendChild(s1);
+      }
+      if (!document.querySelector('script[src*="fast.wistia.com/embed/socq98yhri.js"]')) {
+        const s2 = document.createElement('script');
+        s2.src = 'https://fast.wistia.com/embed/socq98yhri.js';
+        s2.async = true;
+        s2.type = 'module';
+        document.head.appendChild(s2);
+      }
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (

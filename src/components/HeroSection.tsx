@@ -32,10 +32,29 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
           {headline}
         </h1>
 
-        {/* VSL Wistia Video directly below H1 */}
+        {/* Hero Mockup Image */}
         <div className="py-2 flex justify-center">
-          <div className="w-full max-w-[340px] sm:max-w-[380px] bg-black rounded-2xl overflow-hidden border-2 border-orange-500/40 shadow-[0_0_50px_rgba(234,88,12,0.35)] relative mx-auto p-1">
-            <wistia-player media-id="socq98yhri" aspect="0.5625"></wistia-player>
+          <div className="relative mx-auto max-w-[420px] sm:max-w-[520px] w-full flex justify-center items-center">
+            {/* Ambient glow behind mockup */}
+            <div className="absolute inset-0 bg-orange-600/25 rounded-full blur-3xl pointer-events-none" />
+            
+            <button
+              type="button"
+              onClick={onOpenVideo}
+              className="relative z-10 group cursor-pointer focus:outline-none w-full flex justify-center"
+              aria-label="Ver Apresentação do Produto"
+            >
+              <img
+                src="https://i.ibb.co/0VCxrWmK/mock-removebg-preview.png"
+                alt="Mockup do Produto"
+                width={520}
+                height={350}
+                className="w-full max-w-[450px] sm:max-w-[520px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(234,88,12,0.35)] transition-all duration-300 group-hover:scale-[1.02]"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </button>
           </div>
         </div>
 
