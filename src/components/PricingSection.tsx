@@ -3,27 +3,25 @@ import { Check, X, ShieldCheck, Zap, Lock } from 'lucide-react';
 
 interface PricingSectionProps {
   basicPrice: string;
-  basicOldPrice: string;
-  basicCheckoutUrl: string;
   completePrice: string;
-  completeOldPrice: string;
-  completeCheckoutUrl: string;
+  basicOldPrice?: string;
+  completeOldPrice?: string;
+  basicCheckoutUrl?: string;
+  completeCheckoutUrl?: string;
 }
 
 export const PricingSection: React.FC<PricingSectionProps> = React.memo(({
   basicPrice,
-  basicOldPrice,
-  basicCheckoutUrl,
   completePrice,
+  basicOldPrice,
   completeOldPrice,
+  basicCheckoutUrl,
   completeCheckoutUrl
 }) => {
-  const finalCompleteCheckoutUrl = (completeCheckoutUrl && completeCheckoutUrl.startsWith('http')) 
-    ? completeCheckoutUrl 
-    : 'https://pay.wiapy.com/i--jJ3B2UuwN';
-
-  const finalBasicCheckoutUrl = (basicCheckoutUrl && basicCheckoutUrl.startsWith('http')) 
-    ? basicCheckoutUrl 
+  // Links de fallback se não forem passados via props
+  const finalBasicCheckoutUrl = basicCheckoutUrl || 'https://pay.wiapy.com/S-KlsfJ5jJ3z';
+  const finalCompleteCheckoutUrl = completeCheckoutUrl
+    ? completeCheckoutUrl
     : 'https://pay.wiapy.com/ippq8cRXBeIr';
 
   return (

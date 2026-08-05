@@ -7,7 +7,7 @@ interface HeroSectionProps {
   ctaText: string;
   checkoutUrl: string;
   countdownMinutes: number;
-  onOpenVideo: () => void;
+  onOpenVideo?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
@@ -15,8 +15,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
   subtitle,
   ctaText,
   checkoutUrl,
-  countdownMinutes,
-  onOpenVideo
+  countdownMinutes
 }) => {
 
   return (
@@ -38,23 +37,16 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
             {/* Ambient glow behind mockup */}
             <div className="absolute inset-0 bg-orange-600/25 rounded-full blur-3xl pointer-events-none" />
             
-            <button
-              type="button"
-              onClick={onOpenVideo}
-              className="relative z-10 group cursor-pointer focus:outline-none w-full flex justify-center"
-              aria-label="Ver Apresentação do Produto"
-            >
-              <img
-                src="https://i.ibb.co/0VCxrWmK/mock-removebg-preview.png"
-                alt="Mockup do Produto"
-                width={520}
-                height={350}
-                className="w-full max-w-[450px] sm:max-w-[520px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(234,88,12,0.35)] transition-all duration-300 group-hover:scale-[1.02]"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
-            </button>
+            <img
+              src="https://i.ibb.co/0VCxrWmK/mock-removebg-preview.png"
+              alt="Mockup do Produto"
+              width={520}
+              height={350}
+              className="relative z-10 w-full max-w-[450px] sm:max-w-[520px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(234,88,12,0.35)]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </div>
 
