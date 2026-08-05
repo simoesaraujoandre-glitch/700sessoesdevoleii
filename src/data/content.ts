@@ -68,7 +68,7 @@ export const whyChooseUs = [
     text: 'Organize temporadas completas com facilidade.'
   },
   {
-    icon: 'Video',
+    icon: 'FileText',
     text: 'Sessões detalhadas e prontas para aplicar.'
   },
   {
@@ -84,7 +84,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 1 - SAQUE E RECEPÇÃO DE MANCHETE',
     category: 'Fundamentos',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Ativação técnica de saque por baixo e por cima e postura de manchete para recepção equilibrada.',
     objectives: [
       'Dominar a mecânica de contato na bola no saque',
@@ -105,7 +104,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 2 - LEVANTAMENTO E PRECISÃO DE TOQUE',
     category: 'Levantamento',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Técnica de toque, enquadramento de corpo sob a bola e precisão para bolas de ponta e meio.',
     objectives: [
       'Ajustar a postura de mãos e extensão de braços',
@@ -126,7 +124,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 3 - ATAQUE, CORTE E TÉCNICA DE SALTO',
     category: 'Ataque',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Passada de ataque (chamada), impulsão vertical, braçada e variação de golpes (diagonal e paralela).',
     objectives: [
       'Sincronizar a passada de ataque com a trajetória da bola',
@@ -147,7 +144,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 4 - BLOQUEIO INDIVIDUAL E DUPLO',
     category: 'Bloqueio',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Deslocamento de passada cruzada/lateral, tempo de salto e invasão correta por cima da rede.',
     objectives: [
       'Aprender o posicionamento de mãos firme sobre a rede',
@@ -168,7 +164,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 5 - DEFESA DE CAMPO E COBERTURA',
     category: 'Defesa',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Postura baixa defensiva, peixinho/mergulho, leitura de atacante e cobertura de bloqueio.',
     objectives: [
       'Aumentar o tempo de reação no fundo de quadra',
@@ -189,7 +184,6 @@ export const previewSessions: TrainingSession[] = [
     title: 'SESSÃO DE TREINO Nº 6 - SISTEMAS TÁTICOS E TRANSIÇÃO',
     category: 'Tática',
     duration: '60 MIN',
-    hasVideo: true,
     description: 'Organização do sistema 5x1 e 4x2 com infiltração, tática de saques e transição defesa-ataque.',
     objectives: [
       'Memorizar os rodízios e posições de infiltração',
@@ -210,10 +204,10 @@ export const bonusList: BonusItem[] = [
   {
     id: 1,
     badge: 'BÔNUS 1',
-    title: '1000 Treinos Secretos Inspirados nas Metodologias Utilizadas pela FIVB',
+    title: '1.000 Exercícios Extras',
     oldPrice: 'De R$ 50,00',
-    coverImage: 'https://i.ibb.co/LDt6BZG3/bonus1.png',
-    description: 'Descubra uma biblioteca exclusiva de exercícios e treinos inspirados nas metodologias utilizadas no vôlei de alto rendimento para desenvolver técnica, tomada de decisão e desempenho dos atletas.'
+    coverImage: 'https://i.ibb.co/6JFmyYHc/Chat-GPT-Image-5-de-ago-de-2026-20-09-55-removebg-preview.png',
+    description: 'Amplie seu repertório e nunca mais comece um treino do zero. 1.000 exercícios para variar seus treinamentos e ter sempre novas opções para trabalhar com seus atletas.'
   },
   {
     id: 2,

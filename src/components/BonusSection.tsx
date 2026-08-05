@@ -36,7 +36,7 @@ export const BonusSection: React.FC = React.memo(() => {
                 <div>
                   {/* Badge Header */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="bg-orange-600 text-black font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider shadow-md">
+                    <span className="bg-orange-600 text-black font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider shadow-sm">
                       {bonus.badge}
                     </span>
                     <span className="text-[11px] font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2.5 py-0.5 rounded-full uppercase tracking-tight">
@@ -45,7 +45,7 @@ export const BonusSection: React.FC = React.memo(() => {
                   </div>
 
                   {/* 3D Ebook Cover Thumbnail */}
-                  <div className="relative aspect-[3/4] w-full mb-5 rounded-xl overflow-hidden bg-zinc-950 border border-white/10 shadow-2xl flex items-center justify-center p-3 group-hover:border-orange-500/30 transition-colors">
+                  <div className="relative aspect-[3/4] w-full mb-5 rounded-xl overflow-hidden bg-zinc-950 border border-white/10 shadow-inner flex items-center justify-center p-3 group-hover:border-orange-500/30 transition-colors">
                     {!hasFailed ? (
                       <img
                         src={bonus.coverImage}
@@ -84,11 +84,11 @@ export const BonusSection: React.FC = React.memo(() => {
                 </div>
 
                 {/* Price & Free Tag */}
-                <div className="pt-4 border-t border-white/5 space-y-2">
+                <div className="pt-4 border-t border-white/10 space-y-2">
                   <div className="text-xs font-semibold text-zinc-500 text-center line-through font-mono">
                     {bonus.oldPrice}
                   </div>
-                  <div className="bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-black text-sm sm:text-base py-2 px-3 rounded-lg text-center uppercase tracking-wider shadow-inner">
+                  <div className="bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-black text-sm sm:text-base py-2 px-3 rounded-lg text-center uppercase tracking-wider shadow-sm">
                     HOJE GRÁTIS
                   </div>
                 </div>

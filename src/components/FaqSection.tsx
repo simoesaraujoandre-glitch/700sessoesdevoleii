@@ -27,20 +27,20 @@ export const FaqSection: React.FC = React.memo(() => {
             return (
               <div
                 key={faq.id}
-                className="bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 backdrop-blur-sm"
+                className="bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl hover:border-orange-500/40"
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-white text-sm sm:text-base hover:text-orange-500 transition-colors focus:outline-none"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-white text-sm sm:text-base hover:text-orange-400 transition-colors focus:outline-none"
                 >
                   <span className="pr-2 font-bold tracking-tight">{faq.question}</span>
-                  <div className={`p-1.5 rounded-lg bg-zinc-950 text-zinc-400 transition-transform duration-300 shrink-0 border border-white/5 ${isOpen ? 'rotate-180 bg-orange-600 text-black border-orange-500' : ''}`}>
+                  <div className={`p-1.5 rounded-lg bg-zinc-800 text-zinc-400 transition-transform duration-300 shrink-0 border border-white/5 ${isOpen ? 'rotate-180 bg-orange-600 text-black border-orange-400' : ''}`}>
                     <ChevronDown className="w-5 h-5 stroke-[2.5]" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-zinc-300 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-4 bg-zinc-950/60 font-normal">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-zinc-300 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-4 bg-zinc-950/50 font-normal">
                     {faq.answer}
                   </div>
                 )}

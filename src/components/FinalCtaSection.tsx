@@ -4,7 +4,6 @@ import { Lock } from 'lucide-react';
 interface FinalCtaSectionProps {
   headline: string;
   checkoutUrl: string;
-  countdownMinutes: number;
 }
 
 export const FinalCtaSection: React.FC<FinalCtaSectionProps> = React.memo(({
@@ -37,7 +36,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = React.memo(({
                 el.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="group relative inline-flex items-center justify-center w-full bg-orange-600 hover:bg-orange-500 text-black font-black italic text-lg sm:text-xl py-5 px-8 rounded-sm shadow-[0_0_50px_rgba(234,88,12,0.5)] hover:shadow-[0_0_60px_rgba(234,88,12,0.7)] transition-all duration-300 uppercase tracking-tight border border-orange-400/40 transform hover:-translate-y-0.5 active:translate-y-0 text-center"
+            className="group relative inline-flex items-center justify-center w-full bg-orange-600 hover:bg-orange-500 text-black font-black italic text-lg sm:text-xl py-5 px-8 rounded-sm shadow-[0_0_50px_rgba(234,88,12,0.5)] hover:shadow-[0_0_70px_rgba(234,88,12,0.7)] transition-all duration-300 uppercase tracking-tight border border-orange-400/40 transform hover:-translate-y-0.5 active:translate-y-0 text-center"
           >
             JÁ TIREI MINHAS DÚVIDAS, QUERO COMEÇAR AGORA!
           </a>

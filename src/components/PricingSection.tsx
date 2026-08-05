@@ -92,7 +92,7 @@ export const PricingSection: React.FC<PricingSectionProps> = React.memo(({
                   <div className="w-5 h-5 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5" />
                   </div>
-                  <span className="font-bold bg-zinc-950/90 px-2 py-0.5 rounded border border-orange-500/30">1000 Treinos Secretos (Metodologia FIVB)</span>
+                  <span className="font-bold bg-zinc-950/90 px-2 py-0.5 rounded border border-orange-500/30">1.000 Exercícios Extras</span>
                 </li>
 
                 <li className="flex items-center gap-3 text-orange-400">

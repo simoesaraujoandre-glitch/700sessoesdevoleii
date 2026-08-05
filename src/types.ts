@@ -19,7 +19,6 @@ export interface TrainingSession {
   title: string;
   category: string;
   duration: string;
-  hasVideo: boolean;
   description: string;
   objectives: string[];
   drills: {

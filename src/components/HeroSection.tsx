@@ -6,16 +6,12 @@ interface HeroSectionProps {
   subtitle: string;
   ctaText: string;
   checkoutUrl: string;
-  countdownMinutes: number;
-  onOpenVideo?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
   headline,
   subtitle,
   ctaText,
-  checkoutUrl,
-  countdownMinutes
 }) => {
 
   return (
@@ -38,7 +34,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
             <div className="absolute inset-0 bg-orange-600/25 rounded-full blur-3xl pointer-events-none" />
             
             <img
-              src="https://i.ibb.co/0VCxrWmK/mock-removebg-preview.png"
+              src="https://i.ibb.co/zT7PKvHq/mockupp-removebg-preview.png"
               alt="Mockup do Produto"
               width={520}
               height={350}

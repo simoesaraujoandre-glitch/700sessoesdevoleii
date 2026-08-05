@@ -157,33 +157,18 @@ export const EditModal: React.FC<EditModalProps> = ({
             </div>
           </div>
 
-          {/* Countdown timer minutes */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-300 uppercase">
-                Minutos do Cronômetro
-              </label>
-              <input
-                type="number"
-                name="countdownMinutes"
-                value={form.countdownMinutes}
-                onChange={handleChange}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white text-xs focus:border-orange-500 focus:outline-none"
-              />
-            </div>
-
-            <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-300 uppercase">
-                Texto do Botão CTA
-              </label>
-              <input
-                type="text"
-                name="heroCtaText"
-                value={form.heroCtaText}
-                onChange={handleChange}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white text-xs focus:border-orange-500 focus:outline-none"
-              />
-            </div>
+          {/* Hero CTA Button Text */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-bold text-slate-300 uppercase">
+              Texto do Botão CTA
+            </label>
+            <input
+              type="text"
+              name="heroCtaText"
+              value={form.heroCtaText}
+              onChange={handleChange}
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white text-xs focus:border-orange-500 focus:outline-none"
+            />
           </div>
 
           {/* Submit Actions */}

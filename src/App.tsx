@@ -18,13 +18,11 @@ import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 
 import { defaultConfig } from './data/content';
-import { SalesPageConfig, TrainingSession } from './types';
+import { SalesPageConfig } from './types';
 
-const VideoModal = lazy(() => import('./components/VideoModal').then(m => ({ default: m.VideoModal })));
-const SessionDetailModal = lazy(() => import('./components/SessionDetailModal').then(m => ({ default: m.SessionDetailModal })));
 const EditModal = lazy(() => import('./components/EditModal').then(m => ({ default: m.EditModal })));
 
-const STORAGE_KEY = 'treinamentos_basquete_config_v1';
+const STORAGE_KEY = 'treinamentos_volei_config_v1';
 
 export default function App() {
   const [config, setConfig] = useState<SalesPageConfig>(() => {
@@ -48,16 +46,10 @@ export default function App() {
     }
   });
 
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [selectedSession, setSelectedSession] = useState<TrainingSession | null>(null);
 
-  const handleOpenVideo = useCallback(() => setIsVideoModalOpen(true), []);
-  const handleCloseVideo = useCallback(() => setIsVideoModalOpen(false), []);
   const handleOpenEdit = useCallback(() => setIsEditModalOpen(true), []);
   const handleCloseEdit = useCallback(() => setIsEditModalOpen(false), []);
-  const handleCloseSessionModal = useCallback(() => setSelectedSession(null), []);
-  const handleSelectSession = useCallback((session: TrainingSession) => setSelectedSession(session), []);
 
   const handleSaveConfig = useCallback((newConfig: SalesPageConfig) => {
     setConfig(newConfig);
@@ -80,8 +72,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-orange-600 selection:text-black antialiased relative">
       
-      {/* 1. Header Urgency Banner with integrated countdown */}
-      <HeaderBanner text={config.announcementText} countdownMinutes={config.countdownMinutes} />
+      {/* 1. Header Urgency Banner */}
+      <HeaderBanner text={config.announcementText} />
 
       {/* 2. Hero Section */}
       <HeroSection
@@ -89,8 +81,6 @@ export default function App() {
         subtitle={config.heroSubtitle}
         ctaText={config.heroCtaText}
         checkoutUrl={config.completePlanCheckoutUrl}
-        countdownMinutes={config.countdownMinutes}
-        onOpenVideo={handleOpenVideo}
       />
 
       {/* 3. O Que Você Vai Receber */}
@@ -99,8 +89,8 @@ export default function App() {
       {/* 4. Por Que Escolher Nosso Material */}
       <WhyChooseUs />
 
-      {/* 5. Prévia Do Que Você Vai Receber */}
-      <PreviewSection onSelectSession={handleSelectSession} />
+      {/* 5. Prévia Do Que Você Vai Receber (Demonstração real do PDF) */}
+      <PreviewSection />
 
       {/* 6. Receba 3 Bônus Incríveis GRÁTIS */}
       <BonusSection />
@@ -128,7 +118,6 @@ export default function App() {
       <FinalCtaSection
         headline={config.heroHeadline}
         checkoutUrl={config.completePlanCheckoutUrl}
-        countdownMinutes={config.countdownMinutes}
       />
 
       {/* 12. Footer with edit link */}
@@ -136,17 +125,6 @@ export default function App() {
 
       {/* Modals wrapped in Suspense for lazy loading */}
       <Suspense fallback={null}>
-        <VideoModal
-          isOpen={isVideoModalOpen}
-          onClose={handleCloseVideo}
-        />
-
-        <SessionDetailModal
-          session={selectedSession}
-          onClose={handleCloseSessionModal}
-          onOpenVideo={handleOpenVideo}
-        />
-
         <EditModal
           isOpen={isEditModalOpen}
           onClose={handleCloseEdit}
