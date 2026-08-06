@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { Gift, Check, BookOpen } from 'lucide-react';
 import { bonusList } from '../data/content';
-import bonus1Img from '../assets/images/bonus 1.png';
-import bonus2Img from '../assets/images/50sistemas.png';
-import bonus3Img from '../assets/images/75sessoes.png';
-
-const bonusLocalImages: Record<number, string> = {
-  1: bonus1Img,
-  2: bonus2Img,
-  3: bonus3Img,
-};
 
 export const BonusSection: React.FC = React.memo(() => {
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
@@ -35,8 +26,7 @@ export const BonusSection: React.FC = React.memo(() => {
         {/* 3 Bonus Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-8">
           {bonusList.map((bonus) => {
-            const imageSrc = bonusLocalImages[bonus.id] || bonus.coverImage;
-            const hasFailed = failedImages[bonus.id] || !imageSrc;
+            const hasFailed = failedImages[bonus.id];
 
             return (
               <div
@@ -58,7 +48,7 @@ export const BonusSection: React.FC = React.memo(() => {
                   <div className="relative aspect-[3/4] w-full mb-5 rounded-xl overflow-hidden bg-zinc-950 border border-white/10 shadow-inner flex items-center justify-center p-3 group-hover:border-orange-500/30 transition-colors">
                     {!hasFailed ? (
                       <img
-                        src={imageSrc}
+                        src={bonus.coverImage}
                         alt={bonus.title}
                         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         width={300}

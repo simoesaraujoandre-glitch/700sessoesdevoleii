@@ -15,7 +15,7 @@ export const defaultConfig: SalesPageConfig = {
   supportWhatsapp: '5511999999999',
 };
 
-export const heroMediaThumb = '';
+export const heroMediaThumb = 'https://i.ibb.co/hx0HybhC/mock-removebg-preview.png';
 
 export const mainFeatures = [
   {
@@ -206,7 +206,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 1',
     title: '1.000 Exercícios Extras',
     oldPrice: 'De R$ 50,00',
-    coverImage: '',
+    coverImage: 'https://i.ibb.co/6JFmyYHc/Chat-GPT-Image-5-de-ago-de-2026-20-09-55-removebg-preview.png',
     description: 'Amplie seu repertório e nunca mais comece um treino do zero. 1.000 exercícios para variar seus treinamentos e ter sempre novas opções para trabalhar com seus atletas.'
   },
   {
@@ -214,7 +214,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 2',
     title: '50 Sistemas Táticos do Vôlei Moderno',
     oldPrice: 'De R$ 37,00',
-    coverImage: '',
+    coverImage: 'https://i.ibb.co/ycDR9BY2/bonus2-removebg-preview.png',
     description: 'Conheça diferentes formações, movimentações ofensivas e defensivas para organizar sua equipe de forma profissional.'
   },
   {
@@ -222,7 +222,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 3',
     title: '75 Sessões de Recepção, Defesa e Transição',
     oldPrice: 'De R$ 27,00',
-    coverImage: '',
+    coverImage: 'https://i.ibb.co/7t4DdbQw/bonus3-removebg-preview.png',
     description: 'Treinos específicos para desenvolver fundamentos essenciais e melhorar o desempenho coletivo.'
   }
 ];
@@ -234,7 +234,7 @@ export const testimonials: Testimonial[] = [
     role: 'Treinador de Base',
     quote: 'Esse material transformou completamente a forma como organizo meus treinos.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/3mQsc8Jn/4468f00b988ced120a27e82ffa35a64f.jpg'
   },
   {
     id: 2,
@@ -242,7 +242,7 @@ export const testimonials: Testimonial[] = [
     role: 'Professor de Vôlei',
     quote: 'Valor incrível pelo preço. Tudo organizado e pronto para aplicar.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/PvdWhMKZ/6058d8951667ee8cfc54594451877d72.jpg'
   },
   {
     id: 3,
@@ -250,7 +250,7 @@ export const testimonials: Testimonial[] = [
     role: 'Treinador Juvenil',
     quote: 'A progressão das sessões é excelente e meus atletas evoluíram muito.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/HTjZkSsq/488470220cdbdd72f73405d473a2e8f6.jpg'
   },
   {
     id: 4,
@@ -258,7 +258,7 @@ export const testimonials: Testimonial[] = [
     role: 'Coach Esportivo',
     quote: 'Economizei horas de planejamento. Agora consigo preparar minhas semanas em poucos minutos.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/cKHwZWFh/2cab99b30ffd40d8c3cf21dcd79e21d6.jpg'
   },
   {
     id: 5,
@@ -266,7 +266,7 @@ export const testimonials: Testimonial[] = [
     role: 'Treinador de Escolinha',
     quote: 'A variedade das sessões é impressionante. Sempre encontro um treino diferente para aplicar.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/3mQsc8Jn/4468f00b988ced120a27e82ffa35a64f.jpg'
   },
   {
     id: 6,
@@ -274,7 +274,7 @@ export const testimonials: Testimonial[] = [
     role: 'Preparador Técnico',
     quote: 'Material extremamente organizado. Facilita muito o dia a dia.',
     rating: 5,
-    avatar: ''
+    avatar: 'https://i.ibb.co/PvdWhMKZ/6058d8951667ee8cfc54594451877d72.jpg'
   }
 ];
 

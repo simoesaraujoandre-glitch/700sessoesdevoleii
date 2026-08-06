@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Quote, CheckCircle2, User } from 'lucide-react';
+import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
 
 const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
@@ -54,22 +54,16 @@ export const TestimonialsSection: React.FC = React.memo(() => {
 
               {/* Author Footer */}
               <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                {item.avatar ? (
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    width={44}
-                    height={44}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-orange-600/80 shrink-0"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 text-white font-bold flex items-center justify-center shrink-0 border-2 border-orange-600/80 shadow-md">
-                    <User className="w-5 h-5 text-white" />
-                  </div>
-                )}
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  width={44}
+                  height={44}
+                  className="w-11 h-11 rounded-full object-cover border-2 border-orange-600/80 shrink-0"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
                     <h4 className="font-bold text-white text-sm truncate">
