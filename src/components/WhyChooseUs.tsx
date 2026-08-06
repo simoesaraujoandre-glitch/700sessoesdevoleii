@@ -30,7 +30,7 @@ const benefits = [
 
 export const WhyChooseUs: React.FC = React.memo(() => {
   return (
-    <section id="why-choose-us" className="py-16 md:py-20 bg-zinc-950 border-b border-white/5 relative z-10">
+    <section id="why-choose-us" className="py-8 md:py-12 bg-zinc-950 border-b border-white/5 relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}

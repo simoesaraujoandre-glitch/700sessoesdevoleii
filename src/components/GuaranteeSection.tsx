@@ -3,7 +3,7 @@ import { ShieldCheck, CheckCircle } from 'lucide-react';
 
 export const GuaranteeSection: React.FC = React.memo(() => {
   return (
-    <section id="guarantee-section" className="py-16 md:py-20 bg-zinc-950 border-b border-white/5 relative z-10">
+    <section id="guarantee-section" className="py-8 md:py-10 bg-zinc-950 border-b border-white/5 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-zinc-900 border border-white/10 rounded-2xl p-8 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-sm">
           

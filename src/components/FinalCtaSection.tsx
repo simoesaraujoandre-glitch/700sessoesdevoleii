@@ -10,7 +10,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = React.memo(({
   headline,
 }) => {
   return (
-    <section id="final-cta-section" className="py-16 md:py-24 bg-zinc-950 relative border-b border-white/5 overflow-hidden z-10">
+    <section id="final-cta-section" className="py-8 md:py-12 bg-zinc-950 relative border-b border-white/5 overflow-hidden z-10">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(234,88,12,0.15)_0%,_transparent_70%)] pointer-events-none" />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-8">

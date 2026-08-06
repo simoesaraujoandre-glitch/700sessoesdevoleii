@@ -30,7 +30,7 @@ const featureCards = [
 
 export const WhatYouReceive: React.FC = React.memo(() => {
   return (
-    <section id="what-you-receive" className="py-16 md:py-24 bg-zinc-950 relative border-b border-white/5">
+    <section id="what-you-receive" className="py-8 md:py-12 bg-zinc-950 relative border-b border-white/5 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Title Header */}

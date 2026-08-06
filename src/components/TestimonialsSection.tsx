@@ -6,7 +6,7 @@ const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonial
 
 export const TestimonialsSection: React.FC = React.memo(() => {
   return (
-    <section id="testimonials-section" className="py-16 md:py-24 bg-zinc-950 border-b border-white/5 relative z-10 overflow-hidden">
+    <section id="testimonials-section" className="py-8 md:py-12 bg-zinc-950 border-b border-white/5 relative z-10 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-orange-600/10 rounded-full blur-[130px] pointer-events-none" />
 

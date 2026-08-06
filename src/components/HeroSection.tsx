@@ -15,7 +15,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
 }) => {
 
   return (
-    <section id="hero-section" className="relative overflow-hidden bg-zinc-950 pt-10 pb-16 md:pt-16 md:pb-24 border-b border-white/5">
+    <section id="hero-section" className="relative overflow-hidden bg-zinc-950 pt-8 pb-10 md:pt-12 md:pb-14 border-b border-white/5">
       {/* Background court grid and ambient glow effects */}
       <div className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] bg-orange-600/20 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />

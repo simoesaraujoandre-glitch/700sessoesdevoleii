@@ -7,6 +7,7 @@ import React, { useState, useCallback, lazy, Suspense } from 'react';
 import { HeaderBanner } from './components/HeaderBanner';
 import { HeroSection } from './components/HeroSection';
 import { WhatYouReceive } from './components/WhatYouReceive';
+import { MoreMaterialSection } from './components/MoreMaterialSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { PreviewSection } from './components/PreviewSection';
 import { BonusSection } from './components/BonusSection';
@@ -83,14 +84,17 @@ export default function App() {
         checkoutUrl={config.completePlanCheckoutUrl}
       />
 
-      {/* 3. O Que Você Vai Receber */}
+      {/* 3. Prévia Do Que Você Vai Receber (Demonstração real do PDF) */}
+      <PreviewSection />
+
+      {/* 4. O Que Você Vai Receber */}
       <WhatYouReceive />
 
-      {/* 4. Por Que Escolher Nosso Material */}
-      <WhyChooseUs />
+      {/* 5. Mais do Material */}
+      <MoreMaterialSection />
 
-      {/* 5. Prévia Do Que Você Vai Receber (Demonstração real do PDF) */}
-      <PreviewSection />
+      {/* 6. Por Que Escolher Nosso Material */}
+      <WhyChooseUs />
 
       {/* 6. Receba 3 Bônus Incríveis GRÁTIS */}
       <BonusSection />
