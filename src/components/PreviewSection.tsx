@@ -1,22 +1,18 @@
 import React from 'react';
+import p1 from '../assets/images/produto principal (1).PNG';
+import p2 from '../assets/images/produto principal (2).PNG';
+import p3 from '../assets/images/produto principal (3).PNG';
+import p4 from '../assets/images/produto principal (4).PNG';
+import p5 from '../assets/images/produto principal (5).PNG';
+import p6 from '../assets/images/produto principal (6).PNG';
+import p7 from '../assets/images/produto principal (7).PNG';
+import p8 from '../assets/images/produto principal (8).PNG';
+import p9 from '../assets/images/produto principal (9).PNG';
+import p10 from '../assets/images/produto principal (10).PNG';
+import p11 from '../assets/images/produto principal (11).PNG';
 
-const row1Images = [
-  'https://i.ibb.co/60CQ23x8/IMG-5307.jpg',
-  'https://i.ibb.co/sdMG25yg/IMG-5309.jpg',
-  'https://i.ibb.co/GQWXkpWx/IMG-5311.jpg',
-  'https://i.ibb.co/jkVHfSLW/IMG-5308.jpg',
-  'https://i.ibb.co/hRHwVLwB/IMG-5310.jpg',
-  'https://i.ibb.co/SXtQrLPn/IMG-5313.jpg'
-];
-
-const row2Images = [
-  'https://i.ibb.co/nThRFPW/IMG-5312.jpg',
-  'https://i.ibb.co/Lzyrcqtg/IMG-5314.jpg',
-  'https://i.ibb.co/m5XPJd7K/IMG-5315.jpg',
-  'https://i.ibb.co/rKtNMYGF/IMG-5316.jpg',
-  'https://i.ibb.co/6J40LK39/IMG-5317.jpg',
-  'https://i.ibb.co/60CQ23x8/IMG-5307.jpg'
-];
+const row1Images = [p1, p2, p3, p4, p5, p6];
+const row2Images = [p7, p8, p9, p10, p11, p1];
 
 const duplicatedRow1 = [...row1Images, ...row1Images, ...row1Images];
 const duplicatedRow2 = [...row2Images, ...row2Images, ...row2Images];

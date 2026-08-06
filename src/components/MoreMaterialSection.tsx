@@ -1,18 +1,17 @@
 import React from 'react';
+import m1 from '../assets/images/mais do que voce vai receber   (1).PNG';
+import m2 from '../assets/images/mais do que voce vai receber   (2).PNG';
+import m3 from '../assets/images/mais do que voce vai receber   (3).PNG';
+import m4 from '../assets/images/mais do que voce vai receber   (4).PNG';
+import m5 from '../assets/images/mais do que voce vai receber   (5).PNG';
+import m6 from '../assets/images/mais do que voce vai receber   (6).PNG';
+import m7 from '../assets/images/mais do que voce vai receber   (7).PNG';
+import m8 from '../assets/images/mais do que voce vai receber   (8).PNG';
+import m9 from '../assets/images/mais do que voce vai receber   (9).PNG';
+import m10 from '../assets/images/mais do que voce vai receber   (10).PNG';
+import m11 from '../assets/images/mais do que voce vai receber   (11).PNG';
 
-const materialImages = [
-  'https://i.ibb.co/7dvHN9sf/IMG-5306.jpg',
-  'https://i.ibb.co/hF85LS4N/IMG-5305.jpg',
-  'https://i.ibb.co/39wv14G7/IMG-5304.jpg',
-  'https://i.ibb.co/HTYBD90t/IMG-5302.jpg',
-  'https://i.ibb.co/XfhwTBXS/IMG-5301.jpg',
-  'https://i.ibb.co/bRmcTXsZ/IMG-5300.jpg',
-  'https://i.ibb.co/8LZC4fCq/IMG-5298.jpg',
-  'https://i.ibb.co/cX804rYh/IMG-5296.jpg',
-  'https://i.ibb.co/spjBy50z/IMG-5295.jpg',
-  'https://i.ibb.co/9mwKxJ86/IMG-5297.jpg',
-  'https://i.ibb.co/JWy4N99J/IMG-5294.jpg'
-];
+const materialImages = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11];
 
 const duplicatedImages = [...materialImages, ...materialImages, ...materialImages];
 
