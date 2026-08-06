@@ -40,14 +40,14 @@ export const PreviewSection: React.FC = React.memo(() => {
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-zinc-950 to-transparent z-20 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-zinc-950 to-transparent z-20 pointer-events-none" />
 
-          <div className="flex gap-4 sm:gap-6 w-max animate-marquee-left hover:[animation-play-state:paused] will-change-transform">
+          <div className="flex gap-3 sm:gap-6 w-max animate-marquee-left hover:[animation-play-state:paused] will-change-transform transform-gpu [backface-visibility:hidden]">
             {duplicatedRow1.map((imgUrl, index) => (
               <img
                 key={`r1-${index}`}
                 src={imgUrl}
                 alt={`Demonstração PDF Cima ${index + 1}`}
-                className="h-[240px] sm:h-[300px] md:h-[360px] w-auto shrink-0 rounded-xl object-contain drop-shadow-lg transition-transform duration-300 hover:scale-[1.03]"
-                loading="lazy"
+                className="h-[180px] sm:h-[260px] md:h-[320px] w-auto shrink-0 rounded-xl object-contain drop-shadow-md"
+                loading="eager"
                 decoding="async"
               />
             ))}
@@ -59,14 +59,14 @@ export const PreviewSection: React.FC = React.memo(() => {
           <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-zinc-950 to-transparent z-20 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-zinc-950 to-transparent z-20 pointer-events-none" />
 
-          <div className="flex gap-4 sm:gap-6 w-max animate-marquee-right hover:[animation-play-state:paused] will-change-transform">
+          <div className="flex gap-3 sm:gap-6 w-max animate-marquee-right hover:[animation-play-state:paused] will-change-transform transform-gpu [backface-visibility:hidden]">
             {duplicatedRow2.map((imgUrl, index) => (
               <img
                 key={`r2-${index}`}
                 src={imgUrl}
                 alt={`Demonstração PDF Baixo ${index + 1}`}
-                className="h-[240px] sm:h-[300px] md:h-[360px] w-auto shrink-0 rounded-xl object-contain drop-shadow-lg transition-transform duration-300 hover:scale-[1.03]"
-                loading="lazy"
+                className="h-[180px] sm:h-[260px] md:h-[320px] w-auto shrink-0 rounded-xl object-contain drop-shadow-md"
+                loading="eager"
                 decoding="async"
               />
             ))}
