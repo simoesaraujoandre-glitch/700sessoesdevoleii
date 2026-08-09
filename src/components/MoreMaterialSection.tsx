@@ -45,21 +45,26 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#071A33] to-transparent z-20 pointer-events-none" />
 
         <div className="flex gap-4 sm:gap-6 w-max animate-marquee-more hover:[animation-play-state:paused] will-change-transform transform-gpu [backface-visibility:hidden]">
-          {duplicatedImages.map((imgUrl, index) => (
-            <img
-              key={`more-1-${index}`}
-              src={imgUrl}
-              onError={(e) => {
-                const num = (index % materialImages.length) + 1;
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = `/images/material_${num}.jpg`;
-              }}
-              alt={`Página real do material ${index + 1}`}
-              className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
+          {duplicatedImages.map((imgUrl, index) => {
+            const num = (index % materialImages.length) + 1;
+            return (
+              <img
+                key={`more-1-${index}`}
+                src={imgUrl}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  const fallback = `/images/material_${num}.jpg`;
+                  if (target.src !== window.location.origin + fallback) {
+                    target.src = fallback;
+                  }
+                }}
+                alt={`Página real do material ${index + 1}`}
+                className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
+                loading="eager"
+                decoding="async"
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -69,21 +74,26 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#071A33] to-transparent z-20 pointer-events-none" />
 
         <div className="flex gap-4 sm:gap-6 w-max animate-marquee-reverse hover:[animation-play-state:paused] will-change-transform transform-gpu [backface-visibility:hidden]">
-          {duplicatedSecondImages.map((imgUrl, index) => (
-            <img
-              key={`more-2-${index}`}
-              src={imgUrl}
-              onError={(e) => {
-                const num = (index % secondMaterialImages.length) + 1;
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = `/images/p_${num}.jpg`;
-              }}
-              alt={`Página demonstrativa ${index + 1}`}
-              className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
+          {duplicatedSecondImages.map((imgUrl, index) => {
+            const num = (index % secondMaterialImages.length) + 1;
+            return (
+              <img
+                key={`more-2-${index}`}
+                src={imgUrl}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  const fallback = `/images/p_${num}.jpg`;
+                  if (target.src !== window.location.origin + fallback) {
+                    target.src = fallback;
+                  }
+                }}
+                alt={`Página demonstrativa ${index + 1}`}
+                className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
+                loading="eager"
+                decoding="async"
+              />
+            );
+          })}
         </div>
       </div>
 
