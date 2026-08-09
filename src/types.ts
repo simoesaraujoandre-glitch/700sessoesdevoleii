@@ -13,22 +13,6 @@ export interface SalesPageConfig {
   supportWhatsapp: string;
 }
 
-export interface TrainingSession {
-  id: number;
-  number: string;
-  title: string;
-  category: string;
-  duration: string;
-  description: string;
-  objectives: string[];
-  drills: {
-    name: string;
-    time: string;
-    description: string;
-  }[];
-  courtDiagramType: 'half_court' | 'full_court' | 'tactical_grid';
-}
-
 export interface BonusItem {
   id: number;
   badge: string;
@@ -52,3 +36,4 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+

@@ -6,10 +6,10 @@
 import React, { useState, useCallback, lazy, Suspense } from 'react';
 import { HeaderBanner } from './components/HeaderBanner';
 import { HeroSection } from './components/HeroSection';
-import { WhatYouReceive } from './components/WhatYouReceive';
+import { PainSolutionSection } from './components/PainSolutionSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
 import { MoreMaterialSection } from './components/MoreMaterialSection';
-import { WhyChooseUs } from './components/WhyChooseUs';
-import { PreviewSection } from './components/PreviewSection';
+import { WhatYouReceive } from './components/WhatYouReceive';
 import { BonusSection } from './components/BonusSection';
 import { PricingSection } from './components/PricingSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -23,7 +23,7 @@ import { SalesPageConfig } from './types';
 
 const EditModal = lazy(() => import('./components/EditModal').then(m => ({ default: m.EditModal })));
 
-const STORAGE_KEY = 'treinamentos_volei_config_v1';
+const STORAGE_KEY = 'treinamentos_volei_config_v2';
 
 export default function App() {
   const [config, setConfig] = useState<SalesPageConfig>(() => {
@@ -31,14 +31,6 @@ export default function App() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (!parsed.basicPlanCheckoutUrl || !parsed.basicPlanCheckoutUrl.startsWith('https://pay.wiapy.com')) {
-          parsed.basicPlanCheckoutUrl = defaultConfig.basicPlanCheckoutUrl;
-        }
-        if (!parsed.completePlanCheckoutUrl || !parsed.completePlanCheckoutUrl.startsWith('https://pay.wiapy.com')) {
-          parsed.completePlanCheckoutUrl = defaultConfig.completePlanCheckoutUrl;
-        }
-        parsed.completePlanOldPrice = defaultConfig.completePlanOldPrice;
-        parsed.completePlanPrice = defaultConfig.completePlanPrice;
         return { ...defaultConfig, ...parsed };
       }
       return defaultConfig;
@@ -71,12 +63,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-orange-600 selection:text-black antialiased relative">
+    <div className="min-h-screen bg-[#071A33] text-white font-sans selection:bg-[#FF7A00] selection:text-black antialiased relative">
       
-      {/* 1. Header Urgency Banner */}
+      {/* 1. BARRA SUPERIOR */}
       <HeaderBanner text={config.announcementText} />
 
-      {/* 2. Hero Section */}
+      {/* 2. HERO */}
       <HeroSection
         headline={config.heroHeadline}
         subtitle={config.heroSubtitle}
@@ -84,22 +76,22 @@ export default function App() {
         checkoutUrl={config.completePlanCheckoutUrl}
       />
 
-      {/* 3. Prévia Do Que Você Vai Receber (Demonstração real do PDF) */}
-      <PreviewSection />
+      {/* 3. A REALIDADE DE QUEM PLANEJA TREINOS (Dor & Solução) */}
+      <PainSolutionSection />
 
-      {/* 4. O Que Você Vai Receber */}
+      {/* 4. COMO FUNCIONA */}
+      <HowItWorksSection />
+
+      {/* 5. O QUE VOCÊ ENCONTRA */}
       <WhatYouReceive />
 
-      {/* 5. Mais do Material */}
+      {/* 6. DEMONSTRAÇÃO DO PRODUTO (Fotos reais do material) */}
       <MoreMaterialSection />
 
-      {/* 6. Por Que Escolher Nosso Material */}
-      <WhyChooseUs />
-
-      {/* 6. Receba 3 Bônus Incríveis GRÁTIS */}
+      {/* 7. BÔNUS */}
       <BonusSection />
 
-      {/* 7. Escolha Seu Plano (Pricing) */}
+      {/* 8. OFERTA / PLANOS */}
       <PricingSection
         basicPrice={config.basicPlanPrice}
         basicOldPrice={config.basicPlanOldPrice}
@@ -109,25 +101,25 @@ export default function App() {
         completeCheckoutUrl={config.completePlanCheckoutUrl}
       />
 
-      {/* 8. O Que Dizem Os Treinadores (WhatsApp + Testimonials) */}
+      {/* 9. DEPOIMENTOS */}
       <TestimonialsSection />
 
-      {/* 9. Garantia Incondicional de 7 Dias */}
+      {/* 10. GARANTIA */}
       <GuaranteeSection />
 
-      {/* 10. Perguntas Frequentes (FAQ) */}
+      {/* 11. FAQ */}
       <FaqSection />
 
-      {/* 11. Final CTA conversion banner */}
+      {/* 12. CTA FINAL */}
       <FinalCtaSection
         headline={config.heroHeadline}
         checkoutUrl={config.completePlanCheckoutUrl}
       />
 
-      {/* 12. Footer with edit link */}
+      {/* 13. FOOTER */}
       <Footer onOpenEdit={handleOpenEdit} />
 
-      {/* Modals wrapped in Suspense for lazy loading */}
+      {/* Modals */}
       <Suspense fallback={null}>
         <EditModal
           isOpen={isEditModalOpen}
@@ -141,3 +133,4 @@ export default function App() {
     </div>
   );
 }
+

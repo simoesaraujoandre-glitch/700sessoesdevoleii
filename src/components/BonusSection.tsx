@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
-import { Gift, Check, BookOpen } from 'lucide-react';
+import { BookOpen, Gift } from 'lucide-react';
 import { bonusList } from '../data/content';
+import bonus1Img from '../assets/images/b1.webp';
+import bonus2Img from '../assets/images/b2.webp';
+import bonus3Img from '../assets/images/b3.webp';
+
+const bonusLocalImages: Record<number, string> = {
+  1: bonus1Img,
+  2: bonus2Img,
+  3: bonus3Img,
+};
 
 export const BonusSection: React.FC = React.memo(() => {
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
@@ -10,98 +19,100 @@ export const BonusSection: React.FC = React.memo(() => {
   };
 
   return (
-    <section id="bonus-section" className="py-8 md:py-12 bg-zinc-950 border-b border-white/5 relative z-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="bonus-section" className="py-8 md:py-12 bg-[#071A33] border-t border-white/10 relative z-10 text-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
-        {/* Section Header */}
-        <div className="text-center space-y-3 mb-10 sm:mb-12">
+        {/* Header */}
+        <div className="text-center space-y-2 mb-8">
+          <span className="text-[#FF7A00] font-black italic uppercase text-xs tracking-wider">
+            BÔNUS GRATUITOS
+          </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tighter text-white">
-            Receba 3 Bônus Exclusivos GRÁTIS!
+            E AINDA LEVE 3 BÔNUS GRATUITOS
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base font-normal max-w-xl mx-auto">
-            Garanta acesso imediato a esses conteúdos complementares sem nenhum custo adicional.
+          <p className="text-zinc-300 text-xs sm:text-sm max-w-lg mx-auto">
+            Escolhendo o Plano Completo, você recebe três materiais extras sem pagar nada a mais.
           </p>
         </div>
 
         {/* 3 Bonus Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {bonusList.map((bonus) => {
-            const hasFailed = failedImages[bonus.id];
+            const imageSrc = bonusLocalImages[bonus.id] || bonus.coverImage;
+            const hasFailed = failedImages[bonus.id] || !imageSrc;
 
             return (
               <div
                 key={bonus.id}
-                className="bg-zinc-900 border border-white/10 hover:border-orange-600/50 rounded-2xl p-6 shadow-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm group"
+                className="bg-[#0D2B52] border border-white/10 hover:border-[#FF7A00]/40 rounded-2xl p-6 text-center flex flex-col justify-between space-y-4 shadow-xl transition-all duration-300 hover:-translate-y-1 group"
               >
-                <div>
+                <div className="space-y-4">
                   {/* Badge Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-orange-600 text-black font-black text-xs px-3 py-1 rounded-md uppercase tracking-wider shadow-sm">
+                  <div className="flex items-center justify-between w-full">
+                    <span className="bg-[#FF7A00] text-white font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
                       {bonus.badge}
                     </span>
-                    <span className="text-[11px] font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2.5 py-0.5 rounded-full uppercase tracking-tight">
-                      Incluso Grátis
+                    <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 rounded-full uppercase">
+                      HOJE GRÁTIS
                     </span>
                   </div>
 
-                  {/* 3D Ebook Cover Thumbnail */}
-                  <div className="relative aspect-[3/4] w-full mb-5 rounded-xl overflow-hidden bg-zinc-950 border border-white/10 shadow-inner flex items-center justify-center p-3 group-hover:border-orange-500/30 transition-colors">
+                  {/* Ebook Cover Image */}
+                  <div className="relative aspect-[3/4] max-w-[180px] mx-auto w-full flex items-center justify-center p-2 my-1">
                     {!hasFailed ? (
                       <img
-                        src={bonus.coverImage}
+                        src={imageSrc}
                         alt={bonus.title}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                        width={300}
-                        height={400}
+                        className="w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
+                        width={200}
+                        height={260}
                         loading="lazy"
                         decoding="async"
                         onError={() => handleImageError(bonus.id)}
                       />
                     ) : (
-                      <div className="w-full h-full bg-zinc-900 flex flex-col items-center justify-center p-4 text-center space-y-3 rounded-lg border border-orange-500/20">
-                        <div className="w-12 h-12 rounded-full bg-orange-600/20 text-orange-500 flex items-center justify-center">
-                          <BookOpen className="w-6 h-6" />
-                        </div>
-                        <span className="text-xs font-black text-white uppercase italic">
+                      <div className="w-full h-full bg-[#071A33] flex flex-col items-center justify-center p-3 text-center space-y-2 rounded-xl border border-white/10">
+                        <BookOpen className="w-6 h-6 text-[#FF7A00]" />
+                        <span className="text-xs font-black text-white italic">
                           {bonus.badge}
                         </span>
-                        <p className="text-[11px] text-zinc-400 line-clamp-3">
-                          {bonus.title}
-                        </p>
                       </div>
                     )}
                   </div>
 
-                  {/* Bonus Title */}
-                  <h3 className="text-lg font-black italic uppercase tracking-tight text-white mb-2 leading-snug">
-                    {bonus.title}
-                  </h3>
+                  {/* Bonus Title & Description */}
+                  <div className="space-y-2">
+                    <h3 className="text-base font-black italic uppercase tracking-tight text-white leading-snug">
+                      {bonus.title}
+                    </h3>
 
-                  {/* Description */}
-                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
-                    {bonus.description}
-                  </p>
+                    <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+                      {bonus.description}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Price & Free Tag */}
-                <div className="pt-4 border-t border-white/10 space-y-2">
-                  <div className="text-xs font-semibold text-zinc-500 text-center line-through font-mono">
-                    {bonus.oldPrice}
-                  </div>
-                  <div className="bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-black text-sm sm:text-base py-2 px-3 rounded-lg text-center uppercase tracking-wider shadow-sm">
+                {/* Price Tag */}
+                <div className="pt-3 border-t border-white/10 w-full text-center flex items-center justify-center gap-2">
+                  <span className="text-xs text-zinc-400 line-through font-mono">{bonus.oldPrice}</span>
+                  <span className="text-xs font-black text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded">
                     HOJE GRÁTIS
-                  </div>
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Total Bonus Summary */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2.5 bg-orange-600/10 border border-orange-600/30 text-orange-500 text-sm sm:text-base font-bold px-6 py-3 rounded-full uppercase tracking-tight shadow-lg">
-            <Gift className="w-5 h-5 text-orange-500 animate-bounce shrink-0" />
-            <span>Total em bônus: R$114 — HOJE GRÁTIS!</span>
+        {/* Total Bonus Summary Card */}
+        <div className="mt-10 text-center">
+          <div className="inline-flex items-center justify-center gap-3 bg-[#0D2B52] border border-[#FF7A00]/40 rounded-2xl px-6 py-4 shadow-xl max-w-2xl mx-auto hover:border-[#FF7A00] transition-colors duration-300">
+            <div className="w-8 h-8 rounded-full bg-[#FF7A00]/15 text-[#FF7A00] flex items-center justify-center shrink-0 border border-[#FF7A00]/30">
+              <Gift className="w-4 h-4 text-[#FF7A00]" />
+            </div>
+            <span className="text-xs sm:text-sm md:text-base font-black text-white uppercase tracking-tight">
+              R$114 EM BÔNUS EXTRAS — <span className="text-[#FF7A00]">HOJE GRÁTIS</span> NO PLANO COMPLETO
+            </span>
           </div>
         </div>
 
@@ -109,4 +120,6 @@ export const BonusSection: React.FC = React.memo(() => {
     </section>
   );
 });
+
+
 
