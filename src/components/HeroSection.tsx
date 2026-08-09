@@ -50,9 +50,6 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
               height={360}
               className="relative z-10 w-full max-w-[460px] sm:max-w-[540px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(255,122,0,0.3)]"
               loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              referrerPolicy="no-referrer"
             />
           </div>
         </div>

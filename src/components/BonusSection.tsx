@@ -67,8 +67,6 @@ export const BonusSection: React.FC = React.memo(() => {
                         width={200}
                         height={260}
                         loading="lazy"
-                        decoding="async"
-                        referrerPolicy="no-referrer"
                         onError={() => handleImageError(bonus.id)}
                       />
                     ) : (

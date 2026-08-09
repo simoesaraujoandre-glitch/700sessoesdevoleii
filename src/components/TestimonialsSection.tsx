@@ -61,9 +61,7 @@ export const TestimonialsSection: React.FC = React.memo(() => {
                   width={44}
                   height={44}
                   className="w-11 h-11 rounded-full object-cover border-2 border-[#FF7A00] shrink-0"
-                  referrerPolicy="no-referrer"
                   loading="lazy"
-                  decoding="async"
                 />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
