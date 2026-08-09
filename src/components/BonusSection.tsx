@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BookOpen, Gift } from 'lucide-react';
 import { bonusList } from '../data/content';
-import bonus1Img from '../assets/images/b1.webp';
-import bonus2Img from '../assets/images/b2.webp';
-import bonus3Img from '../assets/images/b3.webp';
+import bonus1Img from '../assets/images/bonus_1.png';
+import bonus2Img from '../assets/images/bonus_2.png';
+import bonus3Img from '../assets/images/bonus_3.png';
 
 const bonusLocalImages: Record<number, string> = {
   1: bonus1Img,

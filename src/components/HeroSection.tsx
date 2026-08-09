@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Check } from 'lucide-react';
-import mockupImg from '../assets/images/mockup.webp';
+import mockupImg from '../assets/images/hero_mockup.png';
 
 interface HeroSectionProps {
   headline: string;
