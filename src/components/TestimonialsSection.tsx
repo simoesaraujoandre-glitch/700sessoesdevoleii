@@ -57,11 +57,17 @@ export const TestimonialsSection: React.FC = React.memo(() => {
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                 <img
                   src={item.avatar || avatarImages[(item.id - 1) % avatarImages.length]}
+                  onError={(e) => {
+                    const avatarNum = ((item.id - 1) % avatarImages.length) + 1;
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = `/images/t${avatarNum}.jpg`;
+                  }}
                   alt={item.name}
                   width={44}
                   height={44}
                   className="w-11 h-11 rounded-full object-cover border-2 border-[#FF7A00] shrink-0"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">

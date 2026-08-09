@@ -66,8 +66,16 @@ export const BonusSection: React.FC = React.memo(() => {
                         className="w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                         width={200}
                         height={260}
-                        loading="lazy"
-                        onError={() => handleImageError(bonus.id)}
+                        loading="eager"
+                        decoding="async"
+                        onError={(e) => {
+                          const fallbackUrl = `/images/bonus_${bonus.id}.png`;
+                          if (e.currentTarget.src !== window.location.origin + fallbackUrl) {
+                            e.currentTarget.src = fallbackUrl;
+                          } else {
+                            handleImageError(bonus.id);
+                          }
+                        }}
                       />
                     ) : (
                       <div className="w-full h-full bg-[#071A33] flex flex-col items-center justify-center p-3 text-center space-y-2 rounded-xl border border-white/10">

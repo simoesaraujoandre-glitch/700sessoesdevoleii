@@ -45,6 +45,10 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
             
             <img
               src={mockupImg}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/images/hero_mockup.png';
+              }}
               alt="Mockup do Produto"
               width={540}
               height={360}
