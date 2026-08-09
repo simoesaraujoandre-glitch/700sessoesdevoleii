@@ -52,6 +52,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
               loading="eager"
               fetchPriority="high"
               decoding="async"
+              referrerPolicy="no-referrer"
             />
           </div>
         </div>

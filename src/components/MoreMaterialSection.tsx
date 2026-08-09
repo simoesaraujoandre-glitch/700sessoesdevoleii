@@ -53,6 +53,7 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
               className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
               loading="lazy"
               decoding="async"
+              referrerPolicy="no-referrer"
             />
           ))}
         </div>
@@ -72,6 +73,7 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
               className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
               loading="lazy"
               decoding="async"
+              referrerPolicy="no-referrer"
             />
           ))}
         </div>
