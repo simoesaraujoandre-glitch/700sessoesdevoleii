@@ -1,13 +1,14 @@
 import React from 'react';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
-import t1 from '../assets/images/t1.jpg';
-import t2 from '../assets/images/t2.jpg';
-import t3 from '../assets/images/t3.jpg';
-import t4 from '../assets/images/t4.jpg';
-import t5 from '../assets/images/t5.jpg';
 
-const avatarImages = [t1, t2, t3, t4, t5];
+const avatarImages = [
+  '/images/t1.webp',
+  '/images/t2.webp',
+  '/images/t3.webp',
+  '/images/t4.webp',
+  '/images/t5.webp',
+];
 
 const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
@@ -57,16 +58,11 @@ export const TestimonialsSection: React.FC = React.memo(() => {
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                 <img
                   src={item.avatar || avatarImages[(item.id - 1) % avatarImages.length]}
-                  onError={(e) => {
-                    const avatarNum = ((item.id - 1) % avatarImages.length) + 1;
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = `/images/t${avatarNum}.jpg`;
-                  }}
                   alt={item.name}
                   width={44}
                   height={44}
                   className="w-11 h-11 rounded-full object-cover border-2 border-[#FF7A00] shrink-0"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
                 <div className="min-w-0 flex-1">

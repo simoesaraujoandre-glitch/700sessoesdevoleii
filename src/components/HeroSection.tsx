@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Check } from 'lucide-react';
-import mockupImg from '../assets/images/hero_mockup.png';
 
 interface HeroSectionProps {
   headline: string;
@@ -44,11 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
             <div className="absolute inset-0 bg-[#FF7A00]/20 rounded-full blur-3xl pointer-events-none" />
             
             <img
-              src={mockupImg}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/hero_mockup.png';
-              }}
+              src="/images/hero_mockup.webp"
               alt="Mockup do Produto"
               width={540}
               height={360}

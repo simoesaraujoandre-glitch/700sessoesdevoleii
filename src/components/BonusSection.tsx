@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { BookOpen, Gift } from 'lucide-react';
 import { bonusList } from '../data/content';
-import bonus1Img from '../assets/images/bonus_1.png';
-import bonus2Img from '../assets/images/bonus_2.png';
-import bonus3Img from '../assets/images/bonus_3.png';
 
-const bonusLocalImages: Record<number, string> = {
-  1: bonus1Img,
-  2: bonus2Img,
-  3: bonus3Img,
+const bonusImages: Record<number, string> = {
+  1: '/images/bonus_1.webp', // 1.000 exercícios extras
+  2: '/images/bonus_2.webp', // 50 sistemas táticos
+  3: '/images/bonus_3.webp', // 75 sessões de recepção
 };
 
 export const BonusSection: React.FC = React.memo(() => {
@@ -38,8 +35,8 @@ export const BonusSection: React.FC = React.memo(() => {
         {/* 3 Bonus Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {bonusList.map((bonus) => {
-            const imageSrc = bonusLocalImages[bonus.id] || bonus.coverImage;
-            const hasFailed = failedImages[bonus.id] || !imageSrc;
+            const primarySrc = bonusImages[bonus.id] || bonus.coverImage;
+            const hasFailed = failedImages[bonus.id];
 
             return (
               <div
@@ -61,21 +58,14 @@ export const BonusSection: React.FC = React.memo(() => {
                   <div className="relative aspect-[3/4] max-w-[180px] mx-auto w-full flex items-center justify-center p-2 my-1">
                     {!hasFailed ? (
                       <img
-                        src={imageSrc}
+                        src={primarySrc}
                         alt={bonus.title}
                         className="w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                         width={200}
                         height={260}
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
-                        onError={(e) => {
-                          const fallbackUrl = `/images/bonus_${bonus.id}.png`;
-                          if (e.currentTarget.src !== window.location.origin + fallbackUrl) {
-                            e.currentTarget.src = fallbackUrl;
-                          } else {
-                            handleImageError(bonus.id);
-                          }
-                        }}
+                        onError={() => handleImageError(bonus.id)}
                       />
                     ) : (
                       <div className="w-full h-full bg-[#071A33] flex flex-col items-center justify-center p-3 text-center space-y-2 rounded-xl border border-white/10">

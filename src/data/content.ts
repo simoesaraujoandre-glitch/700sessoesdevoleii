@@ -21,7 +21,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 1',
     title: '1.000 EXERCÍCIOS EXTRAS',
     oldPrice: 'DE R$50',
-    coverImage: 'https://i.ibb.co/ccGYP2kh/bonus-1-1-removebg-preview.png',
+    coverImage: '/images/bonus_1.webp',
     description: 'Uma biblioteca complementar com 1.000 exercícios para você ter ainda mais opções para variar seus treinamentos.'
   },
   {
@@ -29,7 +29,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 2',
     title: '50 SISTEMAS TÁTICOS DO VÔLEI MODERNO',
     oldPrice: 'DE R$37',
-    coverImage: 'https://i.ibb.co/7xMF1kSS/50sistemas-1-removebg-preview.png',
+    coverImage: '/images/bonus_2.webp',
     description: 'Conheça diferentes formações e movimentações ofensivas e defensivas para organizar sua equipe de forma mais estratégica.'
   },
   {
@@ -37,7 +37,7 @@ export const bonusList: BonusItem[] = [
     badge: 'BÔNUS 3',
     title: '75 SESSÕES DE RECEPÇÃO, DEFESA E TRANSIÇÃO',
     oldPrice: 'DE R$27',
-    coverImage: 'https://i.ibb.co/PZHbQWZT/75sessoes-1-removebg-preview.png',
+    coverImage: '/images/bonus_3.webp',
     description: 'Treinos específicos para desenvolver fundamentos essenciais e trabalhar diferentes situações de jogo.'
   }
 ];
