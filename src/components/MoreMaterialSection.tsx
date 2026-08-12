@@ -2,11 +2,12 @@ import React from 'react';
 
 // Esteira de cima: "produto principal"
 const materialImages = [
-  '/images/p_5.webp',
-  '/images/p_6.webp',
-  '/images/p_2.webp',
-  '/images/p_3.webp',
-  '/images/p_4.webp',
+  '/images/treino_1.webp',
+  '/images/treino_2.webp',
+  '/images/treino_3.webp',
+  '/images/treino_4.webp',
+  '/images/treino_5.webp',
+  '/images/treino_6.webp',
 ];
 const duplicatedImages = [...materialImages, ...materialImages, ...materialImages];
 
@@ -42,7 +43,9 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
                 key={`more-1-${index}`}
                 src={imgUrl}
                 alt={`Página real do material ${index + 1}`}
-                className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
+                width={216}
+                height={300}
+                className="w-[145px] h-[200px] sm:w-[190px] sm:h-[260px] md:w-[216px] md:h-[300px] shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
                 loading="lazy"
                 decoding="async"
               />
@@ -63,7 +66,9 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
                 key={`more-2-${index}`}
                 src={imgUrl}
                 alt={`Página demonstrativa ${index + 1}`}
-                className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
+                width={300}
+                height={300}
+                className="w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
                 loading="lazy"
                 decoding="async"
               />

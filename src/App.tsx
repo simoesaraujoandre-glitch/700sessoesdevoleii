@@ -76,17 +76,17 @@ export default function App() {
         checkoutUrl={config.completePlanCheckoutUrl}
       />
 
-      {/* 3. A REALIDADE DE QUEM PLANEJA TREINOS (Dor & Solução) */}
+      {/* 3. DEMONSTRAÇÃO DO PRODUTO (Fotos reais do material) — logo após o Hero, pra gerar valor de cara */}
+      <MoreMaterialSection />
+
+      {/* 4. A REALIDADE DE QUEM PLANEJA TREINOS (Dor & Solução) */}
       <PainSolutionSection />
 
-      {/* 4. COMO FUNCIONA */}
+      {/* 5. COMO FUNCIONA */}
       <HowItWorksSection />
 
-      {/* 5. O QUE VOCÊ ENCONTRA */}
+      {/* 6. O QUE VOCÊ ENCONTRA */}
       <WhatYouReceive />
-
-      {/* 6. DEMONSTRAÇÃO DO PRODUTO (Fotos reais do material) */}
-      <MoreMaterialSection />
 
       {/* 7. BÔNUS */}
       <BonusSection />
