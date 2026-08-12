@@ -1,13 +1,23 @@
 import React from 'react';
 
-// Esteira de cima: "produto principal"
-const materialImages = [
+// Esteira do topo (nova): os treinos ilustrados coloridos — maior impacto visual
+const topImages = [
   '/images/treino_1.webp',
   '/images/treino_2.webp',
   '/images/treino_3.webp',
   '/images/treino_4.webp',
   '/images/treino_5.webp',
   '/images/treino_6.webp',
+];
+const duplicatedTopImages = [...topImages, ...topImages, ...topImages];
+
+// Esteira do meio: "produto principal"
+const materialImages = [
+  '/images/p_5.webp',
+  '/images/p_6.webp',
+  '/images/p_2.webp',
+  '/images/p_3.webp',
+  '/images/p_4.webp',
 ];
 const duplicatedImages = [...materialImages, ...materialImages, ...materialImages];
 
@@ -31,8 +41,31 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
         </h2>
       </div>
 
-      {/* Marquee Track 1 - Moving Left */}
+      {/* Marquee Track 0 (Topo/Novo) - Moving Left, mais rápida */}
       <div className="relative w-full overflow-hidden py-2 group">
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-[#071A33] to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#071A33] to-transparent z-20 pointer-events-none" />
+
+        <div className="flex gap-4 sm:gap-6 w-max animate-marquee-top hover:[animation-play-state:paused] will-change-transform transform-gpu [backface-visibility:hidden]">
+          {duplicatedTopImages.map((imgUrl, index) => {
+            return (
+              <img
+                key={`more-0-${index}`}
+                src={imgUrl}
+                alt={`Treino ilustrado ${index + 1}`}
+                width={216}
+                height={300}
+                className="w-[145px] h-[200px] sm:w-[190px] sm:h-[260px] md:w-[216px] md:h-[300px] shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
+                loading="lazy"
+                decoding="async"
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Marquee Track 1 - Moving Left */}
+      <div className="relative w-full overflow-hidden py-2 mt-2 sm:mt-4 group">
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-[#071A33] to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#071A33] to-transparent z-20 pointer-events-none" />
 
@@ -85,6 +118,14 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
       </div>
 
       <style>{`
+        @keyframes marqueeTop {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-33.333%, 0, 0);
+          }
+        }
         @keyframes marqueeMore {
           0% {
             transform: translate3d(0, 0, 0);
@@ -100,6 +141,9 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
           100% {
             transform: translate3d(0, 0, 0);
           }
+        }
+        .animate-marquee-top {
+          animation: marqueeTop 22s linear infinite;
         }
         .animate-marquee-more {
           animation: marqueeMore 28s linear infinite;
